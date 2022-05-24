@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:lottie/lottie.dart';
+import 'package:flutter_webview/webview_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,9 +58,18 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      // removes the debug banner
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
         appBar: AppBar(
-      title: Text(widget.title),
-    ));
+          title: Text(widget.title),
+        ),
+        body: WebView(
+          initialUrl: "https://www.facebook.com/",
+          javascriptMode: JavaScriptMode.unrestricted,
+        ),
+      ),
+    );
   }
 }
