@@ -6,4 +6,4 @@ then add it on the pubspec.yaml and also ensure it is umported right on the main
 
 you can also work on removing the app bar
 
-and also anprogress bar for the webview
+and also anprogress bar for the webview.
